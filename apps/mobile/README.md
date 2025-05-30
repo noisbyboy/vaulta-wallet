@@ -1,50 +1,143 @@
-# Welcome to your Expo app 👋
+# Vaulta Wallet – Fullstack Crypto Wallet App 🚀
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Welcome to the **Vaulta Wallet** project! Vaulta is a modern, secure, and user-friendly crypto wallet solution, built with a robust Node.js/Express/MongoDB backend and a beautiful React Native (Expo) mobile frontend. This project helps you store, manage, and explore your digital assets with confidence and ease.
 
-## Get started
+---
 
-1. Install dependencies
+## ✨ Features
 
-   ```bash
-   npm install
-   ```
+- **Secure Crypto Storage**: Industry-standard security for your assets
+- **Easy Wallet Setup**: Create/import wallet in seconds
+- **Multi-Asset Support**: Manage multiple cryptocurrencies
+- **Fast & Intuitive UI**: Smooth onboarding and navigation
+- **Cross-Platform**: Android support
+- **Modern Design**: Clean, responsive, and beautiful interface
+- **User Authentication**: Secure login/register with JWT
+- **RESTful API**: Robust backend for wallet, user, and asset management
 
-2. Start the app
+---
 
-   ```bash
-   npx expo start
-   ```
+## 🛠️ Tech Stack
 
-In the output, you'll find options to open the app in a
+### Frontend (Mobile)
+- **React Native** (Expo)
+- **TypeScript**
+- **NativeWind** for styling
+- **Expo Router** for navigation
+- **Custom Theming** (see `src/theme/`)
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### Backend (API)
+- **Node.js**
+- **Express.js**
+- **MongoDB** (Mongoose ODM)
+- **JWT Authentication**
+- **RESTful API Design**
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## 📁 Folder Structure
 
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+vaulta-wallet/
+├── apps/
+│   ├── backend/           # Node.js/Express API
+│   │   ├── src/
+│   │   │   ├── config/        # DB config
+│   │   │   ├── controllers/   # Route controllers
+│   │   │   ├── middleware/    # Auth, error handling
+│   │   │   ├── models/        # Mongoose models
+│   │   │   ├── routes/        # Express routes
+│   │   │   └── utils/         # Helper functions
+│   │   ├── package.json
+│   │   └── ...
+│   └── mobile/            # React Native app (Expo)
+│       ├── src/
+│       │   ├── app/           # Screens & routing
+│       │   ├── assets/        # Images & fonts
+│       │   ├── components/    # UI components
+│       │   ├── constants/     # App constants
+│       │   ├── hooks/         # Custom hooks
+│       │   └── theme/         # Colors, typography, spacing
+│       ├── package.json
+│       └── ...
+├── libs/                  # Shared libraries
+└── README.md
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## 🚀 Getting Started
 
-To learn more about developing your project with Expo, look at the following resources:
+### 1. Clone the Repository
+```bash
+git clone https://github.com/your-org/vaulta-wallet.git
+cd vaulta-wallet
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### 2. Setup the Backend (API)
+```bash
+cd apps/backend
+npm install
+# Create a .env file (see .env.example) and set your MongoDB URI and JWT secret
+npm run dev
+```
+- The backend will run on `http://localhost:5000` by default.
 
-## Join the community
+### 3. Setup the Mobile App (Frontend)
+```bash
+cd ../mobile
+npm install
+npx expo start
+```
+- Scan the QR code with Expo Go (Android/iOS) or use an emulator/simulator.
+- The app will connect to the backend API (update API URL in your config if needed).
 
-Join our community of developers creating universal apps.
+---
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## 🧭 Key Screens & API Endpoints
+
+### Mobile App
+- **Splash Screen**: Animated brand intro
+- **Welcome**: Onboarding, features, and quick start
+- **Wallet Setup**: Create/import wallet
+- **Main Tabs**: Explore, manage, and send assets
+
+### Backend API
+- `POST /api/auth/register` – Register user
+- `POST /api/auth/login` – Login user
+- `GET /api/wallet` – Get wallet info
+- `POST /api/wallet` – Create/import wallet
+- `GET /api/assets` – List supported assets
+- ...and more (see `apps/backend/src/routes/`)
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! To get started:
+
+1. Fork this repo
+2. Create a new branch (`git checkout -b feature/your-feature`)
+3. Commit your changes
+4. Push and open a Pull Request
+
+---
+
+## 📚 Learn More
+
+- [Expo Documentation](https://docs.expo.dev/)
+- [React Native Docs](https://reactnative.dev/)
+- [NativeWind Docs](https://www.nativewind.dev/)
+- [Expo Router](https://expo.github.io/router/docs/)
+- [Express.js Docs](https://expressjs.com/)
+- [MongoDB Docs](https://www.mongodb.com/docs/)
+
+---
+
+## 💬 Community & Support
+
+- [Expo Discord](https://chat.expo.dev)
+
+---
+
+**Made with ❤️ by the Vaulta Wallet Team**

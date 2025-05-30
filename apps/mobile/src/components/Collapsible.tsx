@@ -1,11 +1,14 @@
+import React, { useEffect } from 'react';
+import { View, StyleSheet, Image, StatusBar, TouchableOpacity } from 'react-native';
 import { PropsWithChildren, useState } from 'react';
-import { StyleSheet, TouchableOpacity } from 'react-native';
 
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { IconSymbol } from '@/components/ui/IconSymbol';
-import { Colors } from '@/constants/Colors';
+import { Colors } from '../theme/colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { palette } from '../theme/colors';
+import { useRouter } from 'expo-router';
 
 export function Collapsible({ children, title }: PropsWithChildren & { title: string }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,5 +44,40 @@ const styles = StyleSheet.create({
   content: {
     marginTop: 6,
     marginLeft: 24,
+  },
+});
+
+export default function SplashScreen() {
+  const router = useRouter();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      router.replace('/(tabs)');
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, [router]);
+
+  return (
+    <View style={splashStyles.container}>
+      <StatusBar barStyle="light-content" backgroundColor={palette.purpleBackground} />
+      <Image
+        source={require('../assets/images/icon.png')} // ← Diperbaiki
+        style={splashStyles.logo}
+        resizeMode="contain"
+      />
+    </View>
+  );
+}
+
+const splashStyles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: palette.purpleBackground,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  logo: {
+    width: 120,
+    height: 120,
   },
 });

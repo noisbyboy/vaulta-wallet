@@ -5,6 +5,7 @@ node_modules/
 # Expo files
 .expo/
 .expo-shared/
+*.expo*
 
 # Logs
 logs
@@ -44,3 +45,15 @@ android/app/build/
 # iOS
 ios/Pods/
 ios/build/
+
+# Environment files
+.env
+
+# TypeScript build info
+*.tsbuildinfo
+
+# Test coverage
+coverage/
+
+# IDE settings
+.idea/

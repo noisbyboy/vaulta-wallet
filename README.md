@@ -12,5 +12,5 @@ A secure and elegant Web3 wallet app built with
 1. Pastikan sudah install [Node.js](https://nodejs.org/), [Git](https://git-scm.com/), dan [Expo CLI](https://docs.expo.dev/get-started/installation/)
 2. Clone repo ini  
    ```bash
-   git clone https://github.com/username/vaulta.git
-   cd vaulta
+   git clone https://github.com/username/vaulta-wallet.git
+   cd vaulta-wallet
